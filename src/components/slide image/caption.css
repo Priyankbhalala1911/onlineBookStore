@@ -1,0 +1,27 @@
+.caption{
+    background: rgb(5 120 126);
+    text-align: center;
+    color:white;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.slide-image{
+    z-index: -1000px;
+    
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+@media (max-width:810px) {
+    .caption{
+        font-size: 1rem;
+    }
+}
+@media (max-width:810px) and (max-width:510px){
+    .caption{
+        font-size: 0.7rem;
+    }
+}

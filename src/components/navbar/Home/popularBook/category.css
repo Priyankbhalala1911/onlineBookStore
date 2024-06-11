@@ -1,0 +1,27 @@
+.bookCategory{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.bookCategory ul{
+    list-style: none;
+    padding-left: 10px;
+}
+.bookCategory li button{
+    padding: 8px 30px ;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 250;
+}
+.bookCategory li button:hover{
+    border-color: rgb(217 85 33);
+    color: rgb(217 85 33);
+    cursor: pointer;
+}
+.bookCategory li button:active{
+    border-color: rgb(217 85 33);
+    color: rgb(217 85 33);
+    cursor: pointer;
+}

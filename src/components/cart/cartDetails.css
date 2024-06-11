@@ -1,0 +1,159 @@
+.empty {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.cart-container {
+    display: flex;
+    width: 80%;
+    margin: 50px 10%;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding: 0px 30px;
+
+
+}
+
+.xmark {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    background: none;
+    border: 0;
+    font-size: 1.3rem;
+}
+
+.details {
+    display: flex;
+    padding: 5px;
+}
+
+.cart-item {
+    display: flex;
+    border: 1px solid black;
+    /* align-items: center; */
+    text-align: left;
+    position: relative;
+    margin-bottom: 10px;
+    /* justify-content: space-between; */
+}
+
+
+
+.cart-item .image img {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.cart-item .title {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.cart-item .amount {
+    padding: 10px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.cart-item .quentity {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.bag-container-item {
+    margin-top: 17px;
+    width: 30%;
+    height: 300px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.item-count {
+    font-weight: 600;
+    color: grey;
+    padding-bottom: 10px;
+}
+
+.totalMRP,
+.discountMRP,
+.convenience-fee,
+.total-amount {
+    padding: 8px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.discountMRP span {
+    color: rgb(5 120 126);
+}
+
+.totalMRP,
+.total-amount {
+    padding-top: 10px;
+}
+
+.total-amount {
+    font-weight: 600;
+}
+
+.place-order {
+    width: 100%;
+    margin-top: 55px;
+    color: white;
+    background-color: rgb(5 120 126);
+    border: none;
+    padding: 12px 0px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.place-order:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width:920px) {
+    .cart-container {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart {
+        padding: 0;
+        width: 100%;
+    }
+
+    .bag-container-item {
+        width: 100%;
+    }
+
+    .cart-item .title {
+        font-size: 1.3rem;
+
+    }
+
+    .cart-item .amount {
+        font-size: 1.1rem;
+
+    }
+
+    .cart-item .quentity {
+        font-size: 1rem;
+
+    }
+}
+
+@media (max-width:380px) {
+    .cart-item {
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+}

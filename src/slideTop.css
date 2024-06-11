@@ -1,0 +1,60 @@
+.slide-container{
+    text-align: center;
+    padding: 8px 15%;
+    background: rgb(13 107 112);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.react-slideshow-container .default-nav{
+    width: 22px;
+    height: 22px;
+    background: transparent;
+    color: white;
+}
+.react-slideshow-container .default-nav:hover{
+    background-color: rgba(128, 128, 128, 0.452);
+    width: 30px;
+    height: 30px;
+}
+@media (max-width:1130px) {
+    .slide-container{
+        padding: 8px 10%;
+    }
+    .react-slideshow-container .default-nav{
+        width: 19px;
+        height: 19px;
+        
+    }
+}
+@media (max-width:1130px) and (max-width:810px) {
+    .slide-container{
+        padding: 8px 2%;
+        font-size: 0.8rem;
+    }
+    .react-slideshow-container .default-nav{
+        width: 19px;
+        height: 19px;
+        
+    }
+}
+@media (max-width:810px) and (max-width:510px) {
+    .slide-container{
+        padding: 8px 1%;
+        font-size: 0.6rem;
+        font-weight: 200;
+    }
+    
+}
+@media (max-width:510px){
+    .slide-container{
+        padding: 8px 1%;
+        font-size: 0.7rem;
+        font-weight: 100;
+    }
+    .react-slideshow-container .default-nav{
+        width: 14px;
+        height: 14px;
+        
+    }
+}

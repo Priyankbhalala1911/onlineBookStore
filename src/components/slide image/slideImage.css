@@ -1,0 +1,11 @@
+.slide-container1{
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    z-index: -1000;
+}
+.slide-image-cover{   
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}

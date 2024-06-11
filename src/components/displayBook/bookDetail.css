@@ -1,0 +1,261 @@
+.container-book {
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-top: 5%;
+    transition: 0.5s;
+}
+
+.container-book .image {
+    /* border: 1px solid black; */
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-book .image img {
+    width: 50%;
+    padding: 10px;
+}
+
+.container-book .image img:hover {
+    border: 1px solid rgb(5 120 126);
+}
+
+.container-book .details {
+    width: 60%;
+    /* border: 1px solid rgb(5 120 126); */
+    text-align: left;
+}
+
+.container-book .details .book-title {
+    text-align: left;
+    padding-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* font-display: swap; */
+    font-size: 2.08rem;
+    line-height: 1.25;
+}
+
+.container-book .details .book-subtitle {
+    line-height: 1.25;
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.container-book .details .book-author {
+    line-height: 1.25;
+    padding-bottom: 45px;
+    font-size: 1.2rem;
+    color: rgb(5 120 126);
+}
+
+.container-book .details .active {
+    font-weight: 900;
+    padding-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+
+.container-book .details .book-amount {
+    display: flex;
+    align-items: self-end;
+}
+
+.container-book .details .book-amount .retailprice {
+    font-size: 2.1rem;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.container-book .details .book-amount .listprice {
+    font-size: 1.4rem;
+    padding: 0 15px 5px;
+}
+
+.container-book .details .book-amount .discount {
+    font-size: 1.1rem;
+    padding: 0 0 5px;
+    font-weight: 600;
+    color: rgb(217 85 33);
+}
+
+.container-book .details .quntity {
+    width: 200px;
+    margin: 40px 0;
+}
+
+.container-book .details .quntity button {
+    width: 28%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 2px;
+    border: 0;
+    background: rgb(5 120 126);
+    border: 1px solid black;
+}
+
+.container-book .details .quntity .value {
+    background: none;
+    width: 44%;
+}
+
+.container-book .details .addtocart {
+    width: 300px;
+}
+
+.container-book .details .addtocart button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background: rgb(5 120 126);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.container-book .details .addtocart button:hover {
+    transform: scale(1.05);
+    color: white;
+    border: 1px solid black;
+    transition: 0.1s;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    margin: 8% 5% 2%;
+}
+
+.overview {
+    margin: 0 5%;
+    padding: 10px;
+    border: 1px solid rgb(5 120 126);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    border-radius: 5px;
+}
+
+.overview .book-title {
+    font-size: 1.3rem;
+    padding: 25px 0;
+    font-family: "Playfair Display", serif;
+}
+
+.overview .description {
+    font-size: 1rem;
+    padding: 25px 0;
+
+}
+
+.overview .description {
+    font-size: 1rem;
+    padding: 25px 0;
+
+}
+.product-details{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product-details h1{
+    font-size: 1.8rem;
+    color: rgb(5 120 126);
+    font-family: "Playfair Display", serif;
+
+}
+.product-details table{
+    font-size: 1.2rem;
+}
+th{
+    padding: 10px 0;
+    text-align: left;
+}
+td{
+    padding-left: 35px;
+}
+
+
+
+@media (max-width:1000px) {
+    .container-book .image img {
+        width: 70%;
+        padding: 10px;
+    }
+    .container-book .details .book-title {
+        font-size: 1.5rem;
+    }
+    .container-book .details .book-author {
+        font-size: 1rem;
+    }
+    .container-book .details .book-author {
+        font-size: 1rem;
+    }
+}
+@media (max-width:650px) {
+    .container-book{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .container-book .details {
+        width: 100%;
+        text-align: center;
+    }
+    .container-book .details .book-title{
+        text-align: center;
+    }
+    .container-book .details .book-amount {
+        width: 100%;
+        justify-content: center;
+    }
+    .container-book .details .quntity{
+        margin: 40px auto;
+    }
+    .container-book .details .addtocart {
+        margin: auto;
+    }
+    .container-book .details .book-amount .retailprice{
+        font-size: 1.5rem;
+    }
+    .container-book .details .book-amount .listprice {
+        font-size: 1.1rem;
+        
+    }
+    .container-book .details .book-amount .discount {
+        font-size: 0.9rem;
+        
+    }
+    .overview .book-title {
+        font-size: 1rem;
+    }
+    .product-details h1{
+        font-size: 1.5rem;
+    }
+    .product-details table{
+        font-size: 1rem;
+    }
+    td{
+        padding-left: 15px;
+    }
+}
+@media (max-width:330px) {
+    .container-book .details .quntity {
+        width: 150px;
+    }
+    .container-book .details .addtocart {
+        width: 250px;
+    }
+}

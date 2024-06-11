@@ -1,0 +1,40 @@
+.popularBook{
+    text-align: center;
+    /* border: 1px solid black; */
+    width: 90%;
+    margin: auto;
+    /* padding: 25px; */
+}
+.react-multi-carousel-track{
+    margin-bottom: 25px;
+}
+.react-multiple-carousel__arrow--left {
+    left: 0;
+}
+.react-multiple-carousel__arrow--right {
+    right: 0;
+}
+.cart{
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    margin: auto;
+    cursor: pointer;
+}   
+.cart img{
+    width: 180px;
+    height: 260px;
+}
+.cart .price{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 10px;
+    
+}
+.cart .title{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 10px;
+    color: rgb(217 85 33);
+}
+
