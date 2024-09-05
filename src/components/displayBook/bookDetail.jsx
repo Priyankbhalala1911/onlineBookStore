@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import "./bookDetail.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useCart } from 'react-use-cart';
+import { useDispatch } from 'react-redux';
+import { addBook} from '../../Store/reducer';
 
 const BookDetail = () => {
   const { addItem } = useCart();
+  const dispatch = useDispatch();
   const [value, setValue] = useState(0);
   const location = useLocation()
   const item = location.state.id;
@@ -14,6 +19,7 @@ const BookDetail = () => {
   var retailprice = location.state.id.saleInfo.retailPrice.amount;
 
   var discount = (((listprice - retailprice) / listprice) * 100).toFixed(2)
+  var discountPrice = listprice - retailprice
 
 
   return (
@@ -51,8 +57,19 @@ const BookDetail = () => {
 
           <div className="addtocart">
             <button onClick={(value)=>{
-              addItem({ id: item.id, name: item.volumeInfo.title, price: listprice ,image:item.volumeInfo.imageLinks.smallThumbnail ,amount:retailprice, quantity: value})
-              window.location.reload()
+              // addItem({ id: item.id, name: item.volumeInfo.title, price: listprice ,image:item.volumeInfo.imageLinks.smallThumbnail ,amount:retailprice, quantity: value})
+              // window.location.reload()
+              dispatch(addBook({ id: item.id, name: item.volumeInfo.title, price: listprice ,image:item.volumeInfo.imageLinks.smallThumbnail ,amount:retailprice, quantity: 1,discount:discountPrice}))
+              toast.success("Add Book in Cart", {
+                position: "top-right",
+                autoClose: 500,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                // progress: undefined,
+                theme:  "colored",
+                },);
               }}>ADD TO CART</button>
               
           </div>
@@ -83,8 +100,9 @@ const BookDetail = () => {
           </tr>
         </table>
       </div>
-
+      <ToastContainer />
     </div >
+    
   )
 }
 

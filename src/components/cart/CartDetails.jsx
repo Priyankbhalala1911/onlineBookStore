@@ -1,38 +1,33 @@
 import React from 'react'
-import { useCart } from 'react-use-cart';
+
 import "./cartDetails.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Payment from '../Payment/payment';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeBook } from '../../Store/reducer';
 
 
 
 const CartDetails = () => {
+  const dispatch = useDispatch();
   const convenienceFee = 99;
-  var discount = [];
-
-  // console.log("hello")
-  const {
-    isEmpty,
-    totalUniqueItems,
-    items,
-    removeItem,
-    cartTotal
-  } = useCart();
-  if (isEmpty) return <p className='empty'>Your cart is empty</p>;
-  // console.log(discount)
+  const {addBookCart,totalQunity} = useSelector((state)=>state.Cart);
+  var cartTotal = 0;
+  var discountPrice = 0;
+  
   return (
     <div className='cart-container'>
       <div className="cart">
         {
-          items.map((curEle) => {
-            discount.push(curEle.price - curEle.amount)
+          addBookCart.map((curEle,index) => {
+            cartTotal+=curEle.quantity*curEle.price
+            discountPrice+=curEle.quantity*curEle.discount
             return (
-              <div className="cart-item">
+              <div className="cart-item" key={index}>
                 <button className="xmark" onClick={() => {
-                  window.location.reload()
-                  removeItem(curEle.id)
+                  dispatch(removeBook(curEle.id))
                 }}>
 
                   <FontAwesomeIcon icon={faXmark} color="black" />
@@ -52,14 +47,14 @@ const CartDetails = () => {
         }
       </div>
       <div className="bag-container-item">
-        <div class="item-count">PRICE DETAILS {totalUniqueItems} items</div>
+        <div class="item-count">PRICE DETAILS {totalQunity} items</div>
         <div class="totalMRP">
           Total MRP
           <span>₹{cartTotal.toFixed(2)}</span>
         </div>
         <div class="discountMRP">
           Discount on MRP
-          <span>-₹{(discount.reduce((total, num) => total + num, 0)).toFixed(2)}</span>
+          <span>-₹{discountPrice.toFixed(2)}</span>
         </div>
         <div class="convenience-fee">
           Convenience Fee
@@ -68,7 +63,7 @@ const CartDetails = () => {
         <hr />
         <div class="total-amount">
           Total Amount
-          <span>₹{(cartTotal - (discount.reduce((total, num) => total + num, 0)) + convenienceFee).toFixed(2)}</span>
+          <span>₹{(cartTotal - discountPrice + convenienceFee).toFixed(2)}</span>
         </div>
         <Link to="./payment"><button class="place-order" onClick={()=><Payment/>}>PLACE ORDER</button></Link>
       </div>
