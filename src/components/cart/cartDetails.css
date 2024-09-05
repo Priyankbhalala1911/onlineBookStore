@@ -1,12 +1,13 @@
-.empty {
-    text-align: center;
-    font-size: 2.5rem;
-}
 
 .cart-container {
     display: flex;
     width: 80%;
     margin: 50px 10%;
+}
+.empty {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: auto;
 }
 
 .cart {

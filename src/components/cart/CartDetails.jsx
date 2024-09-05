@@ -16,6 +16,16 @@ const CartDetails = () => {
   const {addBookCart,totalQunity} = useSelector((state)=>state.Cart);
   var cartTotal = 0;
   var discountPrice = 0;
+
+  if(totalQunity === 0){
+    return(
+      <div className='cart-container'>
+        <p className='empty'>Your Cart is empty</p>
+      </div>
+    )
+  } 
+  else{
+
   
   return (
     <div className='cart-container'>
@@ -69,6 +79,7 @@ const CartDetails = () => {
       </div>
     </div>
   )
+}
 }
 
 export default CartDetails;
